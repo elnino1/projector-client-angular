@@ -1,0 +1,27 @@
+<div id="requirementList">
+
+
+	<div class="jumbotron text-center">
+		<h1>requirements list</h1>
+
+		<p>{{ reqMessage }}</p>
+	</div>
+
+
+    <h2>requirements list</h2>
+
+
+
+    <ul>
+        <li ng-repeat="req in requirements">
+            <a href="#/requirements/{{req.id}}"><span class="requirementName">{{req.name}}</span></a> :
+            <span class="requirementDescription">{{req.description | filter:ellipsis:20}}</span> &nbsp;
+            <button class="button" ng-click="deleteRequirement(req)">X</button>
+        </li>
+    </ul>
+
+    <hr/>
+
+    <button ng-click="gotoRequirementNewPage()" class="button">Add</button>
+
+</div>
